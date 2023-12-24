@@ -25,7 +25,7 @@ struct ContentView: View {
                   endPoint: .trailing
               )
         
-        let imageNameArray = ["eye.fill", "bandage.fill", "burns", "drowning", "bone fracture", "choking", "epilepsy", "bites"]
+        let imageNameArray = ["eye", "bandage.fill", "burns", "drowning", "bone", "choking", "epilepsy", "bites"]
             
         let textArray = ["Eyes", "Cuts", "Burns", "Drowning", "Bone", "Choking", "Epilepsy", "Bites"]
         
@@ -72,13 +72,13 @@ struct ContentView: View {
                                       .cornerRadius(10)
                                       .overlay (
                                         
-                                        VStack {
-                                            Image(systemName: "bandage.fill")
+                                        VStack (alignment: .leading){
+                                            Image(imageNameArray[index])
                                                 .scaleEffect(1.5)
                                                 .foregroundColor(.white)
                                                 .bold()
                                                 .frame(alignment: .leading)
-                                                .padding()
+                                             .padding()
                                             
                                            
                                             Text(textArray[index])
@@ -118,16 +118,16 @@ struct ContentView: View {
       struct RectangleDetailSheet: View {
           let index: Int
           
-          let infoArray = [" cool cool cool ", " new new new", "wowowowow"]
+          let infoArray = ["Eyes", "Cuts", "Burns", "Drowning", "Bone", "Choking", "Epilepsy", "Bites"]
 
           var body: some View {
               VStack {
                   Text(infoArray[index])
                       .font(.title)
-                      .padding()
+                      .bold()
+                      .padding(.top)
                   
                   
-                  // Add additional details or content for the selected rectangle
                   Spacer()
         
                   
