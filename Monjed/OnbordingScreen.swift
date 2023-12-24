@@ -11,7 +11,7 @@ struct OnboardingItem {
     let image: String
     let title: String
     let text: String
-    let accentColor = Color("T")
+   
 }
 
 struct OnboardingViewModel {
@@ -28,19 +28,20 @@ struct OnboardingListView: View {
             ForEach(items, id: \.id) { item in
                 HStack(alignment: .center) {
                     Image(systemName: item.image)
-                        .foregroundColor(item.accentColor)
+                        .foregroundColor(.accentColor)
                         .padding()
                         .font(.title)
                         .accessibility(hidden: true)
-                    VStack(alignment: .center){
+                    VStack(alignment: .leading){
                         Text(item.text)
                             .bold()
                             .font(.headline)
                             .fixedSize(horizontal: false, vertical: true)
                         Text(item.title)
-                            .font(.headline)
+                            .font(.caption)
+                            .foregroundColor(.gray)
                             .fixedSize(horizontal: false, vertical: true)
-                    }
+                    }.padding()
                 }
             }
             .padding([.leading, .trailing, .bottom])
@@ -50,7 +51,7 @@ struct OnboardingListView: View {
 
 struct OnboardingView: View {
     let model: OnboardingViewModel
-
+    
     var body: some View {
         VStack {
             Text(model.title)
@@ -59,15 +60,18 @@ struct OnboardingView: View {
                 .padding(.top, 20)
             ScrollView {
                 OnboardingListView(items: model.items)
-              
+                
             }
             Button(action: {}, label: {
                 Text(model.buttonLabel).padding()
+                    .frame(width:300)
             })
-            .background(Color(.systemBlue))
+            .background(Color(.accent))
             .cornerRadius(15)
             .accentColor(.white)
+            .padding(50)
             .padding([.bottom, .leading, .trailing])
+            
         }
     }
 }
@@ -75,14 +79,14 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         let model = OnboardingViewModel(
-            title: "Welcome to Munjid",
+            title: "Welcome to Mondjed",
             items: [
                 OnboardingItem(image: "cross.case", title: "Help your colleague as soon as possible.",text:"Heimlich"),
                 OnboardingItem(image: "bandage", title: "Follow the instructions thoroughly and bandage the wounds in the right way.",text:"bandage"),
-                OnboardingItem(image: "applewatch", title: "Munjid available on iPhone and Apple Watch.",text:"iPhone and Apple Watch"),
-                OnboardingItem(image: "accessibility", title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",text:"lo")
+                OnboardingItem(image: "applewatch", title: "Mondjed available on iPhone and Apple Watch.",text:"iPhone and Apple Watch"),
+                OnboardingItem(image: "accessibility", title: "Mondjed provides Accessibility (voice suspension, voice recognition).",text:"Accessibility")
             ],
-            buttonLabel: "Get Started"
+            buttonLabel: "Continue"
         )
         return OnboardingView(model: model)
     }
