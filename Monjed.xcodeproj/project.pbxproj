@@ -11,6 +11,7 @@
 		1F82705A2B331A5B00FE1385 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8270592B331A5B00FE1385 /* ContentView.swift */; };
 		1F82705C2B331A5C00FE1385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F82705B2B331A5C00FE1385 /* Assets.xcassets */; };
 		1F82705F2B331A5C00FE1385 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F82705E2B331A5C00FE1385 /* Preview Assets.xcassets */; };
+		1F9B568E2B379513008054A7 /* OnbordingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B568D2B379513008054A7 /* OnbordingScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		1F8270592B331A5B00FE1385 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1F82705B2B331A5C00FE1385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F82705E2B331A5C00FE1385 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1F9B568D2B379513008054A7 /* OnbordingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		1F8270562B331A5B00FE1385 /* Monjed */ = {
 			isa = PBXGroup;
 			children = (
+				1F9B568D2B379513008054A7 /* OnbordingScreen.swift */,
 				1F8270572B331A5B00FE1385 /* MonjedApp.swift */,
 				1F8270592B331A5B00FE1385 /* ContentView.swift */,
 				1F82705B2B331A5C00FE1385 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F82705A2B331A5B00FE1385 /* ContentView.swift in Sources */,
+				1F9B568E2B379513008054A7 /* OnbordingScreen.swift in Sources */,
 				1F8270582B331A5B00FE1385 /* MonjedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
