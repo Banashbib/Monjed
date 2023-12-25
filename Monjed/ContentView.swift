@@ -135,9 +135,9 @@ struct RectangleDetailSheet: View {
             contentArray[index]
                 .font(.title)
                 .bold()
-                .padding(.bottom)
-                .padding()
-            
+                //.padding()
+                
+                
             if index == 1 {
                             Text("- Wash your hands well with clean water and soap before dealing with the wound, avoiding touching it with your fingers while treating it if possible.")
                     .font(.caption)
@@ -157,7 +157,7 @@ struct RectangleDetailSheet: View {
                                 .font(.caption)
                 Text("- Take painkillers to relieve pain and change the bandage every 24 hours.")
                                 .font(.caption)
-                Spacer()
+               Spacer()
                         }
 
             
@@ -201,7 +201,7 @@ struct RectangleDetailSheet: View {
                     .font(.caption)
     Text("- Cover the affected area with a moist bandage or cool cloth.")
                     .font(.caption)
-                Spacer()
+               Spacer()
                         }
             
             if index == 3 {
@@ -228,7 +228,7 @@ struct RectangleDetailSheet: View {
                                 .font(.caption)
                 Text("- Continue artificial respiration and cardiopulmonary resuscitation until the drowned person regains his breathing or the ambulance arrives.")
                                 .font(.caption)
-                Spacer()
+               Spacer()
                         }
             /**/
             
@@ -425,6 +425,7 @@ struct SegmentedControlView1: View {
                     
                 
             }
+            Spacer()
         }.padding(.leading)
     }
 }
@@ -467,8 +468,7 @@ struct SegmentedControlView2: View {
                 Text("- When the swelling spreads to other parts of the body, or when the injured person feels difficulty breathing, nausea, or dizziness, this means that the injured person is suffering from a severe allergic reaction to bee stings, call 911 immediately.")
                     .bold()
                     .font(.caption)
-                
-                    
+               
                 
             }
        
@@ -553,6 +553,7 @@ struct SegmentedControlView2: View {
                     .font(.caption)
                 
             }
+            Spacer()
         }.padding(.leading)
     }
 }
