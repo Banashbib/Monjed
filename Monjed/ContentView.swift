@@ -29,7 +29,17 @@ struct ContentView: View {
             
         let textArray = ["Eye injury", "Cuts", "Burns", "Drowning", "Bone fracture", "Choking", "Epilepsy", "Bites"]
         
-            
+        
+        var filteredIndices: [Int] {
+                   if searchTerm.isEmpty {
+                       return Array(0..<textArray.count)
+                   } else {
+                       return textArray.indices.filter {
+                           textArray[$0].lowercased().contains(searchTerm.lowercased())
+                       }
+                   }
+               }
+
 
         VStack {
             Text("Get well soon!")
@@ -45,24 +55,40 @@ struct ContentView: View {
             
         } .navigationBarHidden(true)
         
-        
+            .padding()
   
         NavigationView {
             
                   ScrollView {
                       
-//                      HStack {
-//                          TextField("search first aid", text: $searchTerm)
-//                      } .padding(10)
-//                        .background(Color(.systemGray6))
-//                        .cornerRadius(10)
-//                        .padding(.horizontal)
-                      
+                      HStack {
+                                               TextField("search first aid...", text: $searchTerm)
+                                                   .padding(.leading, 27)
+                                               
+                                           } .padding(6)
+                                             .background(Color(.systemGray6))
+                                             .cornerRadius(10)
+                                             .padding(.horizontal)
+                                             .overlay(
+                                                 
+                                                 HStack {
+                                                     Image(systemName: "magnifyingglass")
+                                                     Spacer()
+                                                     Button(action: {}, label: {
+                                                         Image(systemName: "mic.fill") })
+                                                     
+                                                 }.padding(.horizontal, 25)
+                                                  .foregroundColor(.gray)
+                                                 
+                                                     
+                                                 )
+                                           
+                                             .padding(.vertical, 10)
                       
                   
                       LazyVGrid(columns: [GridItem(.flexible(), spacing:-30), GridItem(.flexible(), spacing: -30)]) {
                           
-                          ForEach(0..<8) { index in
+                          ForEach(filteredIndices, id: \.self) { index in
                               
                               HStack {
                                   Rectangle()
@@ -78,9 +104,9 @@ struct ContentView: View {
                                                 .foregroundColor(.white)
                                                 .bold()
                                                 .frame(alignment: .leading)
-                                             .padding()
+                                                .padding()
                                             
-                                           
+                                            
                                             Text(textArray[index])
                                                 .foregroundColor(.white)
                                                 .bold()
@@ -111,7 +137,7 @@ struct ContentView: View {
                       }
                   }
             
-        }.searchable(text: $searchTerm, prompt: "search first aid")
+        }/*.searchable(text: $searchTerm, placement: .automatic, prompt: "search first aid...")*/
         
           }
       }
