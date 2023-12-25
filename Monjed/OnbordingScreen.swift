@@ -72,30 +72,43 @@ struct OnboardingListView: View {
 
 struct OnboardingView: View {
     let model: OnboardingViewModel
-    
+    @State private var isOnboardingCompleted = false
+
     var body: some View {
-        VStack {
-            Text(model.title)
-                .font(.largeTitle)
-                .bold()
-                .padding(.top, 20)
-                .accessibility(label: Text(model.title))
-            ScrollView {
-                OnboardingListView(items: model.items)
+        NavigationView {
+            VStack {
+                Text(model.title)
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top, 20)
+                    .accessibility(label: Text(model.title))
+                ScrollView {
+                    OnboardingListView(items: model.items)
+                }
+                NavigationLink(destination: ContentView(), isActive: $isOnboardingCompleted) {
+                    Button(action: {
+                        UserDefaults.standard.set(true, forKey: "isOnboardingCompleted")
+                        isOnboardingCompleted = true
+                    }, label: {
+                        Text(model.buttonLabel).padding()
+                            .frame(width: 300)
+                    })
+                    .background(Color(.accent))
+                    .cornerRadius(15)
+                    .accentColor(.white)
+                    .padding(50)
+                    .padding([.bottom, .leading, .trailing])
+                    .accessibility(label: Text(model.buttonLabel))
+                }
             }
-            Button(action: {}, label: {
-                Text(model.buttonLabel).padding()
-                    .frame(width: 300)
-            })
-            .background(Color(.accent))
-            .cornerRadius(15)
-            .accentColor(.white)
-            .padding(50)
-            .padding([.bottom, .leading, .trailing])
-            .accessibility(label: Text(model.buttonLabel))
+            .accessibilityElement(children: .contain)
+            .accessibility(label: Text("Onboarding View"))
         }
-        .accessibilityElement(children: .contain)
-        .accessibility(label: Text("Onboarding View"))
+        .onAppear {
+            if UserDefaults.standard.bool(forKey: "isOnboardingCompleted") {
+                isOnboardingCompleted = true
+            }
+        }
     }
 }
 

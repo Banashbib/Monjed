@@ -11,6 +11,7 @@
 		1F82705A2B331A5B00FE1385 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8270592B331A5B00FE1385 /* ContentView.swift */; };
 		1F82705C2B331A5C00FE1385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F82705B2B331A5C00FE1385 /* Assets.xcassets */; };
 		1F82705F2B331A5C00FE1385 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F82705E2B331A5C00FE1385 /* Preview Assets.xcassets */; };
+		1F852A652B39B25D004D780E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1F852A642B39B25D004D780E /* Localizable.xcstrings */; };
 		1F9B568E2B379513008054A7 /* OnbordingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9B568D2B379513008054A7 /* OnbordingScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		1F8270592B331A5B00FE1385 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1F82705B2B331A5C00FE1385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F82705E2B331A5C00FE1385 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1F852A642B39B25D004D780E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1F9B568D2B379513008054A7 /* OnbordingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbordingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +39,7 @@
 		1F82704B2B331A5B00FE1385 = {
 			isa = PBXGroup;
 			children = (
+				1F852A642B39B25D004D780E /* Localizable.xcstrings */,
 				1F8270562B331A5B00FE1385 /* Monjed */,
 				1F8270552B331A5B00FE1385 /* Products */,
 			);
@@ -112,6 +115,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 1F82704B2B331A5B00FE1385;
 			productRefGroup = 1F8270552B331A5B00FE1385 /* Products */;
@@ -130,6 +134,7 @@
 			files = (
 				1F82705F2B331A5C00FE1385 /* Preview Assets.xcassets in Resources */,
 				1F82705C2B331A5C00FE1385 /* Assets.xcassets in Resources */,
+				1F852A652B39B25D004D780E /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
