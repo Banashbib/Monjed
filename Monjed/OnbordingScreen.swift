@@ -11,7 +11,6 @@ struct OnboardingItem {
     let image: String
     let title: String
     let text: String
-   
 }
 
 struct OnboardingViewModel {
@@ -32,19 +31,41 @@ struct OnboardingListView: View {
                         .padding()
                         .font(.title)
                         .accessibility(hidden: true)
+                        .accessibility(label: accessibilityLabel(for: item.image))
+                        .accessibility(hint: Text("Icon"))
                     VStack(alignment: .leading){
                         Text(item.text)
                             .bold()
                             .font(.headline)
                             .fixedSize(horizontal: false, vertical: true)
+                            .accessibility(label: Text(item.text))
                         Text(item.title)
                             .font(.caption)
                             .foregroundColor(.gray)
                             .fixedSize(horizontal: false, vertical: true)
+                            .accessibility(label: Text(item.title))
                     }.padding()
                 }
+                .accessibilityElement(children: .combine)
             }
             .padding([.leading, .trailing, .bottom])
+        }
+        .accessibilityElement(children: .contain)
+        .accessibility(label: Text("Onboarding Items"))
+    }
+    
+    private func accessibilityLabel(for image: String) -> Text {
+        switch image {
+        case "cross.case":
+            return Text("Cross Case Icon")
+        case "bandage":
+            return Text("Bandage Icon")
+        case "applewatch":
+            return Text("Apple Watch Icon")
+        case "accessibility":
+            return Text("Accessibility Icon")
+        default:
+            return Text("Unknown Icon")
         }
     }
 }
@@ -58,21 +79,23 @@ struct OnboardingView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding(.top, 20)
+                .accessibility(label: Text(model.title))
             ScrollView {
                 OnboardingListView(items: model.items)
-                
             }
             Button(action: {}, label: {
                 Text(model.buttonLabel).padding()
-                    .frame(width:300)
+                    .frame(width: 300)
             })
             .background(Color(.accent))
             .cornerRadius(15)
             .accentColor(.white)
             .padding(50)
             .padding([.bottom, .leading, .trailing])
-            
+            .accessibility(label: Text(model.buttonLabel))
         }
+        .accessibilityElement(children: .contain)
+        .accessibility(label: Text("Onboarding View"))
     }
 }
 
@@ -81,10 +104,10 @@ struct OnboardingView_Previews: PreviewProvider {
         let model = OnboardingViewModel(
             title: "Welcome to Mondjed",
             items: [
-                OnboardingItem(image: "cross.case", title: "Help your colleague as soon as possible.",text:"Heimlich"),
-                OnboardingItem(image: "bandage", title: "Follow the instructions thoroughly and bandage the wounds in the right way.",text:"bandage"),
-                OnboardingItem(image: "applewatch", title: "Mondjed available on iPhone and Apple Watch.",text:"iPhone and Apple Watch"),
-                OnboardingItem(image: "accessibility", title: "Mondjed provides Accessibility (voice suspension, voice recognition).",text:"Accessibility")
+                OnboardingItem(image: "cross.case", title: "Help your colleague as soon as possible.", text: "Heimlich"),
+                OnboardingItem(image: "bandage", title: "Follow the instructions thoroughly and bandage the wounds in the right way.", text: "bandage"),
+                OnboardingItem(image: "applewatch", title: "Mondjed available on iPhone and Apple Watch.", text: "iPhone and Apple Watch"),
+                OnboardingItem(image: "accessibility", title: "Mondjed provides Accessibility (voice suspension, voice recognition).", text: "Accessibility")
             ],
             buttonLabel: "Continue"
         )
