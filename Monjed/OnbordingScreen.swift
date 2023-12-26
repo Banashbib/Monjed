@@ -9,14 +9,14 @@ import SwiftUI
 struct OnboardingItem {
     let id = UUID()
     let image: String
-    let title: String
-    let text: String
+    let title: LocalizedStringKey
+    let text: LocalizedStringKey
 }
 
 struct OnboardingViewModel {
-    let title: String
+    let title: LocalizedStringKey
     let items: [OnboardingItem]
-    let buttonLabel: String
+    let buttonLabel: LocalizedStringKey
 }
 
 struct OnboardingListView: View {
@@ -125,5 +125,6 @@ struct OnboardingView_Previews: PreviewProvider {
             buttonLabel: "Continue"
         )
         return OnboardingView(model: model)
+            
     }
 }

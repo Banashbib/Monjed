@@ -41,13 +41,10 @@ struct llllEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
-        }
+        
+        Image("Monjed 1")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
     }
 }
 
@@ -55,6 +52,7 @@ struct llll: Widget {
     let kind: String = "llll"
 
     var body: some WidgetConfiguration {
+        
         AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
             llllEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
@@ -65,13 +63,14 @@ struct llll: Widget {
 extension ConfigurationAppIntent {
     fileprivate static var smiley: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+        intent.favoriteEmoji = " "
+        
         return intent
     }
     
     fileprivate static var starEyes: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
+        intent.favoriteEmoji = " "
         return intent
     }
 }

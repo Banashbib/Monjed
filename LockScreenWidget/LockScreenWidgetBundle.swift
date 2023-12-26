@@ -9,9 +9,14 @@ import WidgetKit
 import SwiftUI
 
 @main
-struct LockScreenWidgetBundle: WidgetBundle {
-    var body: some Widget {
-        LockScreenWidget()
-        LockScreenWidgetLiveActivity()
+struct LockScreenWidget: Widget {
+    private let kind: String = "LockScreenWidget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            LockScreenWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName(" Monjed Widget")
+        .description("This is lock screen Monjed widget to access the app easy.")
     }
 }

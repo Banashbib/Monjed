@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 
 struct ContentView: View {
@@ -27,18 +28,22 @@ struct ContentView: View {
         
         let imageNameArray = ["eyeUpdate", "bandage.fill 1", "burns", "drowning", "bone", "choking", "epilepsy", "bites"]
             
-        let textArray = ["Eye injury", "Cuts", "Burns", "Drowning", "Bone fracture", "Choking", "Epilepsy", "Bites"]
+        let textArray: [LocalizedStringKey] = ["Eye injury", "Cuts", "Burns", "Drowning", "Bone fracture", "Choking", "Epilepsy", "Bites"]
         
         
         var filteredIndices: [Int] {
-                   if searchTerm.isEmpty {
-                       return Array(0..<textArray.count)
-                   } else {
-                       return textArray.indices.filter {
-                           textArray[$0].lowercased().contains(searchTerm.lowercased())
-                       }
-                   }
-               }
+            if searchTerm.isEmpty {
+                return Array(0..<textArray.count)
+            } else {
+                return textArray.indices.filter {
+                    let localizedString = textArray[$0]
+                    let regularString = String(describing: localizedString)
+                    return regularString.lowercased().contains(searchTerm.lowercased())
+                }
+            }
+        }
+
+
 
 
         VStack() {
@@ -832,4 +837,5 @@ struct SegmentedControlView2: View {
 }
 #Preview {
     ContentView()
+        
 }

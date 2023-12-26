@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "."
+          }
+        }
+      }
     },
     "{He said, “Do not fear, I am with you, I hear and I see.}" : {
       "localizations" : {
@@ -456,6 +463,17 @@
         }
       }
     },
+    "Choking" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الاختناق"
+          }
+        }
+      }
+    },
     "Contact the Red Crescent immediately and take the following measures until they arrive: " : {
       "localizations" : {
         "ar" : {
@@ -858,7 +876,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الكسور"
+            "value" : "ثقب"
           }
         }
       }

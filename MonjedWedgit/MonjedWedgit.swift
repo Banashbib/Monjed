@@ -42,11 +42,7 @@ struct MonjedWedgitEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Favorite Emoji:")
-            Text(entry.configuration.favoriteEmoji)
+            Image(systemName:"Monjed 1")
         }
     }
 }
@@ -65,13 +61,13 @@ struct MonjedWedgit: Widget {
 extension ConfigurationAppIntent {
     fileprivate static var smiley: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "😀"
+        intent.favoriteEmoji = " "
         return intent
     }
     
     fileprivate static var starEyes: ConfigurationAppIntent {
         let intent = ConfigurationAppIntent()
-        intent.favoriteEmoji = "🤩"
+        intent.favoriteEmoji = " "
         return intent
     }
 }

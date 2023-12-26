@@ -24,7 +24,7 @@ struct llllLiveActivity: Widget {
         ActivityConfiguration(for: llllAttributes.self) { context in
             // Lock screen/banner UI goes here
             VStack {
-                Text("Hello \(context.state.emoji)")
+                Text("Monjed \(context.state.emoji)")
             }
             .activityBackgroundTint(Color.cyan)
             .activitySystemActionForegroundColor(Color.black)
@@ -64,11 +64,11 @@ extension llllAttributes {
 
 extension llllAttributes.ContentState {
     fileprivate static var smiley: llllAttributes.ContentState {
-        llllAttributes.ContentState(emoji: "😀")
+        llllAttributes.ContentState(emoji: " ")
      }
      
      fileprivate static var starEyes: llllAttributes.ContentState {
-         llllAttributes.ContentState(emoji: "🤩")
+         llllAttributes.ContentState(emoji: " ")
      }
 }
 
